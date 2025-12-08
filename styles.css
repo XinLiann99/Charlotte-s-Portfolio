@@ -1,8 +1,12 @@
 .header {
-  padding: 80px; /* some padding */
-  text-align: center; /* center the text */
-  background: #1abc9c; /* green background */
-  color: white; /* white text color */
+  padding: 80px;
+  /* some padding */
+  text-align: center;
+  /* center the text */
+  background: #1abc9c;
+  /* green background */
+  color: white;
+  /* white text color */
 }
 
 /* Increase the font size of the <h1> element */
@@ -12,55 +16,122 @@
 
 /* Style the top navigation bar */
 .navbar {
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
+  overflow: hidden;
+  /* Hide overflow */
+  background-color: #333;
+  /* Dark background color */
 }
 
 /* Style the navigation bar links */
 .navbar a {
-  float: left; /* Make sure that the links stay side-by-side */
-  display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: white; /* White text color */
-  text-align: center; /* Center the text */
-  padding: 14px 20px; /* Add some padding */
-  text-decoration: none; /* Remove underline */
+  float: left;
+  /* Make sure that the links stay side-by-side */
+  display: block;
+  /* Change the display to block, for responsive reasons (see below) */
+  color: white;
+  /* White text color */
+  text-align: center;
+  /* Center the text */
+  padding: 20px 20px;
+  /* Add some padding */
+  text-decoration: none;
+  /* Remove underline */
 }
 
 /* Right-aligned link */
 .navbar a.right {
-  float: right; /* Float a link to the right */
+  float: right;
+  /* Float a link to the right */
 }
 
 /* Change color on hover/mouse-over */
 .navbar a:hover {
-  background-color: #ddd; /* Grey background color */
-  color: black; /* Black text color */
+  background-color: #ddd;
+  /* Grey background color */
+  color: black;
+  /* Black text color */
 }
 
 /* Ensure proper sizing */
 * {
   box-sizing: border-box;
 }
-
-/* Column container */
-.row {
+/* --- EXISTING LAYOUT CSS (Kept for Context) --- */
+.wrapper {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 30%; /* Set the width of the sidebar */
-  background-color: #f1f1f1; /* Grey background color */
-  padding: 20px; /* Some padding */
+.row {
+  width: 30%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  padding: 20px;
 }
 
-/* Main column */
 .main {
-  flex: 70%; /* Set the width of the main content */
-  background-color: white; /* White background color */
-  padding: 20px; /* Some padding */
+  width: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.side {
+  width: 100%; 
+}
+
+/* --- YOUR REQUESTED CSS STYLES --- */
+
+/* 1. Profile pic -> normal profile pic size */
+.profile-pic {
+  /* Set a fixed container size (usually a square) */
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Target the image INSIDE the profile-pic container */
+.profile-pic img {
+  /* Ensure the image fills the container */
+  width: 100%;
+  height: 100%;
+  
+  /* Prevent distortion and crop the image to fit */
+  object-fit: cover; 
+  
+  /* Make it circular */
+  border-radius: 50%;
+  /* Optional: Add a subtle border */
+  border: 3px solid #333;
+}
+
+/* Style the LinkedIn link to be outside the circle */
+.profile-pic a {
+  display: block; /* Make the link take up its own line */
+  text-align: center;
+  margin-top: 12px;
+  text-decoration: none; /* Remove underline */
+  color: #0077b5; /* LinkedIn's color for a professional touch */
+}
+
+
+/* 2. The prog1.jpg -> landscape (letter size) */
+/* Target the project image directly in the .main section */
+.main img {
+  /* The landscape standard size is approximately 4:3 or 16:9 aspect ratio. */
+  /* This example uses a common size suitable for web viewing. */
+  width: 100%; /* Make it fill the 70% width of the .main container */
+  max-width: 600px; /* Optional: Prevent it from getting too large on huge screens */
+  height: auto; /* IMPORTANT: Maintain the image's original aspect ratio */
+  display: block; /* Remove any inline spacing issues */
+  margin: 15px 0; /* Add some space above and below the image */
+  border: 1px solid #ddd; /* Subtle border for clean separation */
+}
+
+/* Style for the project role line to keep elements aligned */
+.main p:last-of-type {
+  margin-top: 15px; /* Add a bit of space below the image */
+  line-height: 1.5;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -78,8 +149,40 @@
   }
 }
 
+/* BASIC ACCORDION CSS */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 5px;
+}
+
+/* Add a background color to the button if it is clicked */
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+/* Initially hide the panel, which is required for the script to work properly */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none; /* Crucial: This hides the panel by default */
+  overflow: hidden;
+}
+
+
 .footer {
-  padding: 20px; /* Some padding */
-  text-align: center; /* Center text*/
-  background: #ddd; /* Grey background */
+  padding: 20px;
+  /* Some padding */
+  text-align: center;
+  /* Center text*/
+  background: #ddd;
+  /* Grey background */
 }

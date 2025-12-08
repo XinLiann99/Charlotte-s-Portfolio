@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Page Title</title>
+    <title>Portfolio</title>
 
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="styles.css">
@@ -18,23 +18,104 @@
 <body>
 
     <div class="header">
-        <h1>My Website</h1>
-        <p>A website created by me.</p>
+        <h1>Lian Xin Ting</h1>
+        <p>Nursing (NYP) - HS5335</p>
     </div>
 
 
     <div class="navbar">
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#" class="right">Link</a>
+        <a></a>
+    </div>
+
+    <div class="wrapper">
+        <div class="row">
+            <div class="side">
+                <h2><b>About Me</b></h2>
+                <div class="profile-pic">
+                    <img src="images/profile.jpg">
+                    <p>
+                        Registered Nurse with a strong foundation in acute and rehabilitative care, dedicated to
+                        bridging the gap between clinical precision and holistic recovery. My background spans managing
+                        complex medical conditions in high-pressure wards to facilitating seamless patient discharge
+                        through multidisciplinary collaboration. Beyond clinical skills, I bring proven leadership
+                        experience in project management and team coordination, ensuring organized, compassionate, and
+                        patient-centered care.
+                    </p>
+
+                    <h2><b>Contact Information</b></h2>
+                    <a href="https://www.linkedin.com/in/lianxinting/"><b>LinkedIn</b></a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main">
+            <h2 style="margin-top: 20px;">#1 Leading and Coordinating a Monthly K-Pop Dance Cover Group</h2>
+            <p>This project highlights my practical experience in leadership, organization, and project management,
+                essential for coordinating team efforts in a demanding healthcare environment.</p>
+            <img src="images/prog1.jpg">
+            <p>
+                <b>Role: </b> Group Leader and Time Allocation Manager
+            </p>
+
+            <button class="accordion">Section 1</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Section 2</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Section 3</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Section 4</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                // Toggles the 'active' class for styling the button
+                this.classList.toggle("active");
+
+                // Gets the panel div right after the clicked button
+                var panel = this.nextElementSibling;
+
+                // Toggles the panel visibility
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
     </div>
 
 
-    <div class="row">
-        <div class="side">...</div>
-        <div class="main">...</div>
-    </div>
+
+
 
     <div class="footer">
         <h2>Footer</h2>
