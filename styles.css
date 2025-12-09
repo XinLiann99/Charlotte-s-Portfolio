@@ -5,7 +5,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0; /* Remove default body margin */
+  margin: 0;
+  /* Remove default body margin */
 }
 
 /* --- HEADER AND NAVBAR STYLES --- */
@@ -48,31 +49,59 @@ body {
 /* --- DESKTOP LAYOUT (LARGE SCREENS) --- */
 
 .wrapper {
-    /* Center the entire content block and give it a wide max width */
-    /* THIS IS THE CORE OF THE DESKTOP LAYOUT FIX */
-    display: grid;
-    max-width: 1200px; /* Increased max width for desktop */
-    margin: 0 auto; /* Center the wrapper */
-    gap: 30px; /* Space between the side and main content */
-    padding: 20px;
-    
-    /* Define the two-column grid: 1 part for the sidebar, 3 parts for the main content */
-    grid-template-columns: 1fr 3fr; 
+  /* Center the entire content block and give it a wide max width */
+  /* THIS IS THE CORE OF THE DESKTOP LAYOUT FIX */
+  display: grid;
+  max-width: 1200px;
+  /* Increased max width for desktop */
+  margin: 0 auto;
+  /* Center the wrapper */
+  gap: 30px;
+  /* Space between the side and main content */
+  padding: 20px;
+
+  /* Define the two-column grid: 1 part for the sidebar, 3 parts for the main content */
+  grid-template-columns: 1fr 3fr;
 }
 
-.row { /* Sidebar container */
-    background-color: #f1f1f1;
-    padding: 20px;
-    min-height: 100%;
+.row {
+  /* Sidebar container */
+  background-color: #f1f1f1;
+  padding: 20px;
+  min-height: 100%;
 }
 
-.main { /* Main content container */
-    background-color: white;
-    padding: 20px;
+.main {
+  /* Main content container */
+  background-color: white;
+  padding: 20px;
 }
 
 .side {
-  width: 100%; 
+  width: 100%;
+}
+
+/* Style the LinkedIn icon to make it smaller */
+.linkedin-icon {
+  /* Set a small, fixed size */
+  width: 50px;
+  height: 50px;
+
+  /* Ensure no default image borders/margins interfere */
+  border: none;
+  margin-right: 5px;
+  /* Add a small space between the icon and any adjacent text */
+  vertical-align: middle;
+  /* Helps align the icon nicely with any text */
+}
+
+/* Ensure the link container is properly formatted (if needed) */
+.linkedin-link {
+  display: inline-flex;
+  /* Ensures content stays on one line */
+  align-items: center;
+  /* Centers the icon and text vertically */
+  /* Add any other link styling here */
 }
 
 /* --- PROFILE IMAGE STYLES --- */
@@ -87,7 +116,7 @@ body {
 .profile-pic img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 50%;
   border: 3px solid #333;
 }
@@ -104,36 +133,41 @@ body {
 
 /* Targets ALL images directly inside .main, including the single image in P1/P3 */
 .main img {
-    /* Set a reasonable maximum size for the desktop view */
-    max-width: 350px; /* Adjusted to a slightly larger max-width for better desktop display */
-    width: 100%; /* Ensure it's responsive within its container */
-    height: auto;
-    display: block;
-    margin: 15px 0;
-    border: 1px solid #ddd;
+  /* Set a reasonable maximum size for the desktop view */
+  max-width: 350px;
+  /* Adjusted to a slightly larger max-width for better desktop display */
+  width: 100%;
+  /* Ensure it's responsive within its container */
+  height: auto;
+  display: block;
+  margin: 15px 0;
+  border: 1px solid #ddd;
 }
 
 /* Style for the project role line */
 .main p:last-of-type {
-  margin-top: 15px; 
+  margin-top: 15px;
   line-height: 1.5;
 }
 
 /* --- SIDE-BY-SIDE IMAGE LAYOUT FOR PROJECT #2 (REQUIRES HTML WRAPPER) --- */
 
 .image-gallery-two-col {
-    display: flex;
-    gap: 20px; /* Spacing between the images */
-    margin: 15px 0;
-    /* This Flex container will automatically manage the two images inside */
+  display: flex;
+  gap: 20px;
+  /* Spacing between the images */
+  margin: 15px 0;
+  /* This Flex container will automatically manage the two images inside */
 }
 
 /* Target the images inside the new gallery wrapper to ensure equal width */
 .image-gallery-two-col img {
-    flex: 1; 
-    max-width: 50%; /* Each image takes up half the container width on desktop */
-    height: auto;
-    margin: 0; /* Remove margin from the general image style */
+  flex: 1;
+  max-width: 50%;
+  /* Each image takes up half the container width on desktop */
+  height: auto;
+  margin: 0;
+  /* Remove margin from the general image style */
 }
 
 
@@ -141,43 +175,49 @@ body {
 
 /* Adjusts display for screens 768px wide or smaller (most tablets and phones) */
 @media screen and (max-width: 768px) {
-    
-    /* 1. Stack the Main Columns */
-    .wrapper {
-        grid-template-columns: 1fr; /* Switches to a single column */
-        max-width: 100%; 
-        padding: 10px;
-        gap: 0;
-    }
 
-    .row { /* Sidebar */
-        min-height: auto; 
-        padding-bottom: 0; 
-    }
+  /* 1. Stack the Main Columns */
+  .wrapper {
+    grid-template-columns: 1fr;
+    /* Switches to a single column */
+    max-width: 100%;
+    padding: 10px;
+    gap: 0;
+  }
 
-    /* 2. Make All Project Images Fully Responsive */
-    .main img {
-        width: 100%; /* Makes the image use the full width of the main content area */
-        max-width: 100%; /* Ensures images don't exceed the screen width */
-    }
+  .row {
+    /* Sidebar */
+    min-height: auto;
+    padding-bottom: 0;
+  }
 
-    /* 3. Stack the Side-by-Side Images */
-    .image-gallery-two-col {
-        flex-direction: column; /* Stacks the images vertically */
-        gap: 10px;
-    }
+  /* 2. Make All Project Images Fully Responsive */
+  .main img {
+    width: 100%;
+    /* Makes the image use the full width of the main content area */
+    max-width: 100%;
+    /* Ensures images don't exceed the screen width */
+  }
 
-    /* Ensure stacked images are full width */
-    .image-gallery-two-col img {
-        width: 100%; 
-        max-width: 100%; /* Overrides the 50% max-width for mobile view */
-    }
-    
-    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-    .navbar a {
-        float: none;
-        width: 100%;
-    }
+  /* 3. Stack the Side-by-Side Images */
+  .image-gallery-two-col {
+    flex-direction: column;
+    /* Stacks the images vertically */
+    gap: 10px;
+  }
+
+  /* Ensure stacked images are full width */
+  .image-gallery-two-col img {
+    width: 100%;
+    max-width: 100%;
+    /* Overrides the 50% max-width for mobile view */
+  }
+
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
 }
 
 
@@ -197,8 +237,9 @@ body {
   margin-top: 5px;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .panel {
