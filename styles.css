@@ -56,62 +56,58 @@
 * {
   box-sizing: border-box;
 }
-/* --- EXISTING LAYOUT CSS (Kept for Context) --- */
+/* 1. MAXIMIZE CONTENT WIDTH AND SET DESKTOP LAYOUT (Grid) */
 .wrapper {
-  display: flex;
-  width: 100%;
+    /* Center the entire content block and give it a wide max width */
+    display: grid;
+    max-width: 1200px; /* Increased max width to use more screen space */
+    margin: 0 auto; /* Center the wrapper */
+    gap: 30px; /* Space between the side and main content */
+    padding: 20px;
+    
+    /* Define the two-column grid: 1 part for the sidebar, 3 parts for the main content */
+    grid-template-columns: 1fr 3fr; 
 }
 
-.row {
-  width: 30%;
-  min-height: 100vh;
-  background-color: #f1f1f1;
-  padding: 20px;
+.row { /* This now acts as the sidebar container */
+    background-color: #f1f1f1;
+    padding: 20px;
+    /* Remove original width: 30% from old layout */
+    min-height: 100%; /* Ensure it spans the height of the content */
 }
 
-.main {
-  width: 70%;
-  background-color: white;
-  padding: 20px;
+.main { /* This now acts as the main content container */
+    background-color: white;
+    padding: 20px;
+    /* Remove original width: 70% from old layout */
 }
 
 .side {
   width: 100%; 
 }
 
-/* --- YOUR REQUESTED CSS STYLES --- */
-
-/* 1. Profile pic -> normal profile pic size */
+/* 2. PROFILE IMAGE STYLES (from previous request) */
 .profile-pic {
-  /* Set a fixed container size (usually a square) */
   width: 150px;
   height: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* Target the image INSIDE the profile-pic container */
 .profile-pic img {
-  /* Ensure the image fills the container */
   width: 100%;
   height: 100%;
-  
-  /* Prevent distortion and crop the image to fit */
   object-fit: cover; 
-  
-  /* Make it circular */
   border-radius: 50%;
-  /* Optional: Add a subtle border */
   border: 3px solid #333;
 }
 
-/* Style the LinkedIn link to be outside the circle */
 .profile-pic a {
-  display: block; /* Make the link take up its own line */
+  display: block;
   text-align: center;
   margin-top: 12px;
-  text-decoration: none; /* Remove underline */
-  color: #0077b5; /* LinkedIn's color for a professional touch */
+  text-decoration: none;
+  color: #0077b5;
 }
 
 
@@ -121,7 +117,7 @@
   /* The landscape standard size is approximately 4:3 or 16:9 aspect ratio. */
   /* This example uses a common size suitable for web viewing. */
   width: 100%; /* Make it fill the 70% width of the .main container */
-  max-width: 600px; /* Optional: Prevent it from getting too large on huge screens */
+  max-width: 200px; /* Optional: Prevent it from getting too large on huge screens */
   height: auto; /* IMPORTANT: Maintain the image's original aspect ratio */
   display: block; /* Remove any inline spacing issues */
   margin: 15px 0; /* Add some space above and below the image */
